@@ -1,0 +1,45 @@
+.search-bar {
+  position: relative;
+
+  &__input {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    width: 40rem;
+    margin: 0 auto;
+
+    input {
+      width: 100%;
+      padding-right: 4rem;
+      background: none;
+    }
+
+    span {
+      position: absolute;
+      right: 0.8rem;
+      cursor: pointer;
+      color: #424242;
+      scale: (1);
+      transition: 100ms ease;
+      user-select: none;
+
+      &:active {
+        scale: (0.9);
+      }
+    }
+  }
+
+  &__results {
+    position: absolute;
+
+    width: 100%;
+    height: 200px;
+    max-height: 400px;
+
+    background: white;
+
+  }
+
+}
+

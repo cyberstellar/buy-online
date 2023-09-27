@@ -1,0 +1,9 @@
+.cart-button {
+  width: 100%;
+
+  &.active {
+    color: #2196f3;
+    background: none;
+    border: 1px solid #2196f3;
+  }
+}

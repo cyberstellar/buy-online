@@ -1,0 +1,29 @@
+.brand-filter {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.8rem;
+
+  overflow: hidden;
+  height: 4.2rem;
+
+  padding: 0.4rem;
+  margin: -0.4rem -0.4rem 2.4rem -0.4rem;
+
+  &.active {
+    height: 100%;
+  }
+
+  .show-more {
+    position: absolute;
+    top: 1.6rem;
+    right: 0.4rem;
+
+    &.active {
+      position: unset;
+      margin-left: 1.6rem;;
+    }
+  }
+}

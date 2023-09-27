@@ -1,0 +1,18 @@
+.category-list {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 0.8rem;
+
+  width: 22rem;
+
+  color: #616161;
+
+  a:hover, .active {
+    color: #1d1d1f;
+  }
+
+  .active {
+    font-weight: 600;
+  }
+}

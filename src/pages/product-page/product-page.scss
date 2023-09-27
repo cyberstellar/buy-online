@@ -1,0 +1,42 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  &__inner {
+    display: flex;
+    gap: 1.6rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex-grow: 1;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.8rem;
+    min-width: 16rem;
+
+    .price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+
+      .price-label {
+        font-weight: 600;
+        font-size: 2rem;
+      }
+
+      .base-price-label {
+        color: #757575;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+}

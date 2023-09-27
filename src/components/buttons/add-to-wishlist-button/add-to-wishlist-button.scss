@@ -1,0 +1,12 @@
+.wishlist-button {
+  color: #757575 !important;
+  background-color: transparent !important;
+
+  &:hover {
+    color: #424242 !important;
+  }
+
+  &:active, &.active {
+    color: #f44336 !important;
+  }
+}
