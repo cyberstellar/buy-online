@@ -29,7 +29,7 @@ const Slider = ({ images = [] }) => {
   }
 
   const handleDragStart = event => {
-    if (event.button !== 0 || event.target.tagName === 'BUTTON')
+    if (event.button !== 0 || event.target.tagName === 'BUTTON' || images.length === 1)
       return
 
     const getCurrentOffsetX = _ => new DOMMatrixReadOnly(window.getComputedStyle(sliderImages).getPropertyValue('transform')).m41

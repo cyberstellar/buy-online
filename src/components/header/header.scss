@@ -16,6 +16,7 @@
   .container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1.6rem;
     padding: 0;
     height: 100%;
@@ -30,7 +31,6 @@
   &__buttons {
     display: flex;
     gap: 1.6rem;
-    margin-left: auto;
 
     > a > span {
       position: relative;

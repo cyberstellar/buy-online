@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Button from '../buttons/button'
 import './header.scss'
+import SearchBar from '../search-bar'
 
 const Header = () => {
   const favorites = useSelector(state => state.cart.favorites)
@@ -19,6 +20,8 @@ const Header = () => {
           {window.location.pathname !== '/' &&
             <Button className="link" iconName="arrow_back" text="Назад" onClick={() => navigate(-1)} />
           }
+
+          <SearchBar />
 
           <div className="header__buttons">
             <NavLink to="/favorites" className="btn vertical-icon">
