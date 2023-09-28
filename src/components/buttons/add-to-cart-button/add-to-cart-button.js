@@ -12,9 +12,8 @@ const AddToCartButton = ({ id }) => {
   const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
-    store.getState().cart.products.find(x => x.id === id)
-    && setIsActive(true)
-  }, [])
+    setIsActive(store.getState().cart.products.find(x => x.id === id))
+  }, [id])
 
   const handleClick = () => {
     if (isActive) {

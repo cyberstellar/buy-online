@@ -10,9 +10,8 @@ const AddToWishlistButton = ({ id }) => {
   const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
-    store.getState().cart.favorites.includes(id)
-    && setIsActive(true)
-  }, [])
+    setIsActive(store.getState().cart.favorites.includes(id))
+  }, [id])
 
   const handleClick = () => {
     dispatch(addToFavorites({ id }))
