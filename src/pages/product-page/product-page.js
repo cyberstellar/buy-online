@@ -15,7 +15,7 @@ const ProductPage = () => {
     isError
   } = useGetProductQuery(id)
 
-  const { data = [], isLoading } = useGetAllProductsQuery({ selectedCategory: category, limit: 5 })
+  const { data = [], isLoading } = useGetAllProductsQuery({ selectedCategory: category, limit: 5 }, { skip: !category })
   const [products, setProducts] = useState([])
 
   useEffect(() => {
