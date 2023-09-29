@@ -12,10 +12,11 @@ const ProductPage = () => {
   const { id } = useParams()
   const {
     data: { title, description, price, rating, basePrice, brand, category, images } = {},
+    isLoading,
     isError
   } = useGetProductQuery(id)
 
-  const { data = [], isLoading } = useGetAllProductsQuery({ selectedCategory: category, limit: 5 }, { skip: !category })
+  const { data = [], isLoading: isLoading1 } = useGetAllProductsQuery({ selectedCategory: category, limit: 5 }, { skip: !category })
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -28,36 +29,35 @@ const ProductPage = () => {
     return <Navigate to="404" />
 
   return (
-    !isLoading &&
+
     <div className="product">
-
-      <div className="breadcrumbs">
-        <Link to={`/`}>Главная</Link> —
-        <Link to={`/category/${category}`}>{CATEGORIES[category]}</Link> —
-        <Link to={`/category/${category}?selectedBrands=${brand}`}>{brand}</Link>
-      </div>
-
-      <div className="product__inner">
-        <Slider images={images} />
-
-        <div className="product__info">
-          <h1>{title}</h1>
-          <div>★ {rating}</div>
-          <div>{description}</div>
-        </div>
-
-        <div className="product__buttons">
-          <div className="price">
-            <span className="price-label">${price}</span>
-            <span className="base-price-label">{basePrice}</span>
+      {isLoading
+        ? 'Загрузка...'
+        : <>
+          <div className="breadcrumbs">
+            <Link to={`/`}>Главная</Link> —
+            <Link to={`/category/${category}`}>{CATEGORIES[category]}</Link> —
+            <Link to={`/category/${category}?selectedBrands=${brand}`}>{brand}</Link>
           </div>
-          <AddToCartButton id={+id} />
-          <AddToWishlistButton id={+id} />
-        </div>
-      </div>
-
+          <div className="product__inner">
+            <Slider images={images}/>
+            <div className="product__info">
+              <h1>{title}</h1>
+              <div>★ {rating}</div>
+              <div>{description}</div>
+            </div>
+            <div className="product__buttons">
+              <div className="price">
+                <span className="price-label">${price}</span>
+                <span className="base-price-label">{basePrice}</span>
+              </div>
+              <AddToCartButton id={+id}/>
+              <AddToWishlistButton id={+id}/>
+            </div>
+          </div>
+        </>}
       <h2>Похожие товары</h2>
-      <ProductList products={products} isLoading={isLoading} />
+      <ProductList products={products} isLoading={isLoading1} />
     </div>
   )
 }

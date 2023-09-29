@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { SORT_NAMES } from '../../utils/constants'
 import './sort-button.scss'
 
-const SortButton = () => {
+const SortButton = ({ isLoading = false }) => {
   const [searchParams, setSearchParams] = useSearchParams()
   const detailsRef = useRef(null)
 
@@ -29,6 +29,7 @@ const SortButton = () => {
   // }
 
   return (
+    !isLoading &&
     <div className="sort-button">
       <details ref={detailsRef}>
         <summary className="btn rounded dropdown">

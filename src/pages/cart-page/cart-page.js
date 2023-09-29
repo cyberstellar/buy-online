@@ -19,17 +19,15 @@ const CartPage = () => {
     <div>
       <h1>Корзина</h1>
       <div className="list-container">
-        {!products.length && 'Ваша корзина пуста'}
-        {products.map((product, idx) => {
-          return <ListItem item={product} type="cart" key={idx} />
-        })}
-        {!!products.length &&
+        {!order.length && 'Ваша корзина пуста'}
+        {products.map((product, idx) => <ListItem item={product} type="cart" key={idx} />)}
+        {!!order.length &&
           <div className="checkout">
             <div className="total">
               <span>Итого: </span>
               <span>
-              ${products.reduce((acc, cur) => acc + cur.quantity * cur.price, 0)}
-            </span>
+                ${products.reduce((acc, cur) => acc + cur.quantity * cur.price, 0)}
+              </span>
             </div>
             <button style={{ cursor: 'not-allowed' }} disabled>Перейти к оформлению</button>
           </div>}

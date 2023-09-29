@@ -40,28 +40,29 @@ const BrandFilter = ({ brands = [] }) => {
   }
 
   return (
-    brands.length > 0 &&
     <div className={`brand-filter${isExpanded ? ' active' : ''}`} ref={filterRef}>
-      {brands.map((brand, idx) => (
-        <Button className="rounded"
-                isActive={selectedBrands.includes(brand)}
-                onClick={() => handleBrandClick(brand)}
-                text={brand}
-                key={idx}
-        />
-      ))}
-      {selectedBrands.length > 0 &&
-        <Button className="rounded"
-                isActive={true}
-                onClick={handleClearClick}
-                text="Очистить"
-        />}
-      {maxHeight > 75 &&
-        <Button className="link show-more"
-                isActive={isExpanded}
-                onClick={() => setIsExpanded(!isExpanded)}
-                text={isExpanded ? 'Скрыть' : 'Ещё'}
-        />}
+      {brands.length > 0 && <>
+        {brands.map((brand, idx) => (
+          <Button className="rounded"
+                  isActive={selectedBrands.includes(brand)}
+                  onClick={() => handleBrandClick(brand)}
+                  text={brand}
+                  key={idx}
+          />
+        ))}
+        {selectedBrands.length > 0 &&
+          <Button className="rounded"
+                  isActive={true}
+                  onClick={handleClearClick}
+                  text="Очистить"
+          />}
+        {maxHeight > 75 &&
+          <Button className="link show-more"
+                  isActive={isExpanded}
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  text={isExpanded ? 'Скрыть' : 'Ещё'}
+          />}
+      </>}
     </div>
   )
 }

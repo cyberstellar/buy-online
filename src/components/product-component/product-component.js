@@ -35,7 +35,7 @@ const ProductComponent = ({ title, getData }) => {
     <div className="product-list-container">
       <SectionTitle title={title} subtitle={products.length > 0 ? products.length : null} />
       <BrandFilter brands={brands} />
-      <SortButton />
+      <SortButton isLoading={isLoading} />
       <ProductList products={products} isLoading={isLoading} />
     </div>
   )

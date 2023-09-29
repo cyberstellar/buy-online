@@ -7,7 +7,7 @@ const ProductList = ({ products = [], isLoading = false }) => {
   return (
     isLoading
       ?
-      <div>Loading...</div>
+      'Загрузка...'
       :
       <div className="product-list">
         {products.map(product => <ProductCard item={product} key={product.id} />)}
