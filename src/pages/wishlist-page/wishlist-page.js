@@ -20,7 +20,7 @@ const WishlistPage = () => {
       <h1>Избранное</h1>
       <div className="list-container">
         {!favs.length && 'Ваш список избранного пуст'}
-        {favorites.map((product, idx) => <ListItem item={product} key={idx} />)}
+        {favorites.map(product => <ListItem item={product} key={product.id} />)}
       </div>
     </div>
   )

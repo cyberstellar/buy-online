@@ -12,8 +12,8 @@ const CategoryList = ({ getData }) => {
           <li>
             <NavLink to="/">Все товары</NavLink>
           </li>
-          {categories.map((category, idx) => (
-            <li key={idx}>
+          {categories.map(category => (
+            <li key={category}>
               <NavLink to={`/category/${category}`}>
                 {CATEGORIES[category]}
               </NavLink>

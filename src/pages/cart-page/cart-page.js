@@ -20,7 +20,7 @@ const CartPage = () => {
       <h1>Корзина</h1>
       <div className="list-container">
         {!order.length && 'Ваша корзина пуста'}
-        {products.map((product, idx) => <ListItem item={product} type="cart" key={idx} />)}
+        {products.map(product => <ListItem item={product} type="cart" key={product.id} />)}
         {!!order.length &&
           <div className="checkout">
             <div className="total">
