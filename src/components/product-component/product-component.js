@@ -14,7 +14,7 @@ const ProductComponent = ({ title, getData }) => {
   const { category: selectedCategory } = useParams()
   const { data: brands = [] } = useGetBrandsQuery(selectedCategory)
 
-  const [selectedBrands, setSelectedBrands] = useState([])
+  const [selectedBrands, setSelectedBrands] = useState()
   const [searchParams] = useSearchParams()
 
   const { data: products = [], isLoading } = getData({
@@ -22,7 +22,7 @@ const ProductComponent = ({ title, getData }) => {
     selectedCategory,
     isDesc: searchParams.get('isDesc'),
     sortField: searchParams.get('sortField')
-  })
+  }, { skip: !selectedBrands })
 
   useEffect(() => {
     if (searchParams) {
