@@ -13,13 +13,16 @@ const Header = () => {
     <>
       <header className="header">
         <div className="container">
-          <NavLink to="/" className="header__logo">
-            buy<b>Online</b>
-          </NavLink>
 
-          {window.location.pathname !== '/' &&
-            <Button className="link" iconName="arrow_back" text="Назад" onClick={() => navigate(-1)} />
-          }
+          <div>
+            <NavLink to="/" className="header__logo">
+              buy<b>Online</b>
+            </NavLink>
+
+            {window.location.pathname !== '/' &&
+              <Button className="link" iconName="arrow_back" text="Назад" onClick={() => navigate(-1)} />
+            }
+          </div>
 
           <SearchBar />
 
