@@ -15,7 +15,7 @@ const CategoryList = ({ getData }) => {
           {categories.map(category => (
             <li key={category}>
               <NavLink to={`/category/${category}`}>
-                {CATEGORIES[category]}
+                {category in CATEGORIES ? CATEGORIES[category] : category}
               </NavLink>
             </li>
           ))}
