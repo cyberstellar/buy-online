@@ -47,7 +47,7 @@ export const dummyApi = createApi({
       transformResponse: response => Array.from(new Set(response['products'].map(el => el['brand'])))
     }),
     getCategories: builder.query({
-      query: () => `products/categories`
+      query: () => `products/category-list`
     }),
     getProduct: builder.query({
       query: (id = '') => `products/${id}`,

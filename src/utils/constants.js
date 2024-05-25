@@ -18,7 +18,14 @@ export const CATEGORIES = {
   'sunglasses': 'Солнцезащитные очки',
   'automotive': 'Автомобили',
   'motorcycle': 'Мотоциклы',
-  'lighting': 'Освещение'
+  'lighting': 'Освещение',
+  'kitchen-accessories': 'Кухня',
+  'beauty': 'Косметика',
+  'vehicle': 'Авто',
+  'mobile-accessories': 'Мобильные аксессуары',
+  'skin-care': 'Уход за кожей',
+  'sports-accessories': 'Спортивные аксессуары',
+  'tablets': 'Планшеты'
 }
 
 export const SORT_NAMES = {

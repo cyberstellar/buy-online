@@ -42,7 +42,7 @@ const BrandFilter = ({ brands = [] }) => {
   return (
     <div className={`brand-filter${isExpanded ? ' active' : ''}`} ref={filterRef}>
       {brands.length > 0 && <>
-        {brands.map(brand => (
+        {brands.map(brand => brand && (
           <Button className="rounded"
                   isActive={selectedBrands.includes(brand)}
                   onClick={() => handleBrandClick(brand)}
